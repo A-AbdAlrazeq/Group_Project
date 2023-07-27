@@ -70,6 +70,8 @@ The users of the platform will be able to browse the available cars, get their f
 #### The user explores browsing the available cars in full detail and can book a car
 
 ![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/4a186b22-7d55-4c33-a347-72be308e4fa7)
+![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/bdab8ddb-f2ff-4147-b0fe-a101cc203fa3)
+![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/529f3a12-ccc7-4b62-8e1a-39be0170ee89)
 
 
 
@@ -85,6 +87,15 @@ The users of the platform will be able to browse the available cars, get their f
 ### Checkout:
 -----
 ![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/3685d09b-a283-4423-adf6-5d38b1650e86)
+
+### Bookmarked Cars:
+-----
+![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/dff22b45-7180-43d7-8ab2-4b1ec8ff1105)
+
+### My Orders:
+-----
+![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/bd9fc76d-0a75-4d73-95fb-239ff64882df)
+
 
 
 
