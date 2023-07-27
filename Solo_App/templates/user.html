@@ -70,7 +70,13 @@
             <span >{{car.price}}/day</span>
             <br>
             <br>
-            <a  style="color: black;" id="book"  href="/book" class="btn btn-outline-dark">Add to Cart</a>
+            <a
+            style="color: black"
+            id="addToCart"
+            href="/addToCart/{{car.id}}"
+            class="btn btn-outline-dark mt-3"
+            >Add to cart</a
+          >
             {% if car in bookmarked %}
             <a id="link{{car.id}}" class="remFav fas fa-bookmark"><h3 id="id{{car.id}}" hidden>{{car.id}}</h3></a></a>
             {% else %}

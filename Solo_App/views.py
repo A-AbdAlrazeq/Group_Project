@@ -81,7 +81,12 @@ def register(request):
             messages.error(request, value)
         return redirect('/regLog')
     else:
-        User.objects.create(username=request.POST['username'], email=request.POST['email'], password=request.POST['password'])
+        user = User.objects.create(username=request.POST['username'], email=request.POST['email'], password=request.POST['password'])
+        user.save()
+        #creating a cart when user regisers instead
+        Cart.objects.create(
+                            user = user,
+                        )
         return redirect ('/regLog')
 
 def login(request):
@@ -159,8 +164,6 @@ def editCar(request, car_id):
             messages.error(request, value)
         return redirect(f'/edit/{car_id}')
     else:
-   
-
         selected = Car.objects.get(id=car_id)
         selected.name = request.POST['name']
         selected.model = request.POST['model']
@@ -258,7 +261,16 @@ def remove_car_from_cart(request, car_id):
     return redirect('/cart')
 
 def checkout(request):
-    return render (request, "checkout.html")
+    if 'user_id' in request.session:
+        user=User.objects.get(id=request.session['user_id'])
+        user_cart=Cart.objects.get(user=user)
+        context = {
+                    "cart":user_cart,
+                    "cars":user_cart.cars.count()
+            }
+        return render (request, "checkout.html", context)
+    else:
+        return redirect('/regLog')
 
 
 def bookmark(request):
