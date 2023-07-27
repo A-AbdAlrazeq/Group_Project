@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.core.paginator import Paginator
-from .models import Car ,User,Cart
+from .models import *
 from django.contrib import messages
+from django.utils import timezone
 import datetime
 
 def index(request): 
@@ -269,6 +270,34 @@ def checkout(request):
                     "cars":user_cart.cars.count()
             }
         return render (request, "checkout.html", context)
+    else:
+        return redirect('/regLog')
+    
+def order(request):
+    if 'user_id' in request.session:
+        user=User.objects.get(id=request.session['user_id'])
+        user_cart=Cart.objects.get(user=user)
+        order = Order.objects.create(user = user, total= user_cart.total)
+        order.created_at = timezone.now()
+        order.save()
+        for car in user_cart.cars.all():
+            order.cars.add(car)
+
+        user_cart.cars.clear()
+        user_cart.total = 0
+        user_cart.save()
+        return redirect('/view_orders')
+    else:
+        return redirect('/regLog')
+    
+def view_orders(request):
+    if 'user_id' in request.session:
+        user=User.objects.get(id=request.session['user_id'])
+        print(Order.objects.filter(user=user))
+        context = {
+                    "orders":Order.objects.filter(user=user)
+                }
+        return render (request, "orders.html", context)
     else:
         return redirect('/regLog')
 

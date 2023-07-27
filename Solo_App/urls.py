@@ -24,4 +24,6 @@ urlpatterns = [
     path('remove_cart/<int:car_id>', views.remove_car_from_cart),
     path('bookmark', views.show_favorites),
     path('sort_cars', views.sort_properties),
+    path('order', views.order),
+    path('view_orders', views.view_orders),
 ]

@@ -92,7 +92,7 @@ class Cart(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 class Order(models.Model):
-    user = models.OneToOneField(User, on_delete = models.CASCADE, primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     cars = models.ManyToManyField(Car,related_name="order_car")
     total = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
