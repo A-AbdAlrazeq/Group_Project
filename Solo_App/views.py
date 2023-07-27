@@ -1,3 +1,4 @@
+from math import log
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Car ,User,Cart
@@ -53,31 +54,44 @@ def user(request):
         }
     return render(request, 'user.html', context)
 def add(request):
-    return render(request, 'add.html')
+    user_id = request.session.get('user_id')
+    user =User.objects.get(id=user_id)
+    if user.isAdmin == True:
+        return render(request, 'add.html')
+    else :
+        return render(request, 'home.html')
+
+        
 
 def addCar(request):
-    errors = Car.objects.addValidator(request.POST)
-    if len(errors) > 0:
-        for key, value in errors.items():
-            messages.error(request, value)
-        return redirect('/add')
-    else:
     
-        Car.objects.create(
-                        name = request.POST['name'], 
-                        model = request.POST['model'], 
-                        color = request.POST['color'],
-                        fuelType = request.POST['fuelType'],
-                        price = request.POST['price'],
-                        user = User.objects.get(id=request.session['user_id']), 
-                    )
-        return redirect('/admin')
+        errors = Car.objects.addValidator(request.POST)
+        if len(errors) > 0:
+            for key, value in errors.items():
+                messages.error(request, value)
+            return redirect('/add')
+        else:
+        
+            Car.objects.create(
+                            name = request.POST['name'], 
+                            model = request.POST['model'], 
+                            color = request.POST['color'],
+                            fuelType = request.POST['fuelType'],
+                            price = request.POST['price'],
+                            user = User.objects.get(id=request.session['user_id']), 
+                        )
+            return redirect('/admin')
 
 def edit(request, car_id):
-    context = {
-        'cars' : Car.objects.get(id=car_id) 
-    }
-    return render(request,'edit.html',context)
+    user_id = request.session.get('user_id')
+    user =User.objects.get(id=user_id)
+    if user.isAdmin == True:
+        context = {
+            'cars' : Car.objects.get(id=car_id) 
+        }
+        return render(request,'edit.html',context)
+    else :
+        return render(request, 'home.html')
 
 def editCar(request, car_id):
     errors = Car.objects.editValidator(request.POST)
