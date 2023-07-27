@@ -45,6 +45,7 @@
             <img class="card-img-top" src="../static/img/Logo1.png" alt="Card image cap">
             <div class="card-body h-75">
                 <h5>Order #{{order.id}}</h5>
+                {% for car in order.cars.all %}
                 <span>{{car.model}}</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                 <span>{{car.color}}</span>
                 <br>
@@ -54,6 +55,7 @@
                 <br>
                 <br>
             </div>
+            {% endfor %}
         </div>
         {% endfor %}
          {% else %}
