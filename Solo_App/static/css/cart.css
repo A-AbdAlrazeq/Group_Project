@@ -8,6 +8,7 @@
     margin: 0 auto;
     padding:20px;
     background-color: rgba(0,0,0,.3);
+    margin-top: 100px;
 } 
 .grid{  
     width: 15em; 
@@ -41,6 +42,9 @@ nav img {
 
 #back {
     background: none;
+}
+h3{
+    margin: 1em auto 1em 15%;
 }
 #checkout{
     box-shadow:2px 3px; 
