@@ -24,6 +24,9 @@ The users of the platform will be able to browse the available cars, get their f
 - The user can cancel the car reservation.
 
 - The user can pay electronically.
+- The User can filter car depend on (Fual Type,Model,Color,Price)
+- Users can bookmark cars to review and add to cart later
+- Responsive layout
 ## Demo
 -----
 ### Home Page
@@ -66,7 +69,7 @@ The users of the platform will be able to browse the available cars, get their f
 ## Tech Stack
 -----
 This project was built using Django framework, and uses the following technologies:
-- Client: HTML, CSS, Javascript, Bootstrap, Jquery
+- Client: HTML, CSS, Javascript, Bootstrap, Jquery, AJAX
 - Server: Django
 ## Tools
 -----
