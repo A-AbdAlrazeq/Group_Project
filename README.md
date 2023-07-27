@@ -69,12 +69,24 @@ The users of the platform will be able to browse the available cars, get their f
 -----
 #### The user explores browsing the available cars in full detail and can book a car
 
-![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/c333a29c-118c-42ce-9362-6c8008e4b82c)
+![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/4a186b22-7d55-4c33-a347-72be308e4fa7)
+
 
 
 ### Book Page:
 -----
-![book](https://github.com/abdullah-zyoud/Solo_Project/assets/130833624/2e4f3e4c-9f11-4934-95f1-803005996358)
+![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/bcb43a48-32bf-4334-806b-b99ac3ee364d)
+
+### Cart:
+-----
+![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/2d740289-71b3-402f-8f1b-dcbe60721014)
+![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/fbb7a5a7-970e-496c-a61a-39f451070980)
+
+### Checkout:
+-----
+![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/3685d09b-a283-4423-adf6-5d38b1650e86)
+
+
 
 ## Tech Stack
 -----
