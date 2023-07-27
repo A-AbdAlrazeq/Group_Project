@@ -47,26 +47,30 @@ The users of the platform will be able to browse the available cars, get their f
 ### Admin page:
 -----
 #### The admin explores the browsing available cars in full detail and can add, edit and delete a car
-![admin](https://github.com/abdullah-zyoud/Solo_Project/assets/130833624/1c4b6d0b-2af2-4b23-9254-78e18487a76a)
+![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/04b74048-65d4-4ef2-a7dd-7fbd9b705f53)
+
 
 
 ### Add Car:
 -----
 #### Admin can add a car
-![add](https://github.com/abdullah-zyoud/Solo_Project/assets/130833624/4b7cc2d0-b8e7-45b3-824b-bbc59114b7f3)
+![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/b238b254-c754-44a3-a05e-d3e70aa8f5a5)
+
 
 
 ### Edit Car:
 -----
 #### Admin can Update and Delete the car
-![edit](https://github.com/abdullah-zyoud/Solo_Project/assets/130833624/a472e15e-bf19-4ff4-97d2-9f0fd4dde326)
+![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/2b77ea6d-d428-4359-b1aa-e57dd82230ce)
+
 
 
 ### User Page:
 -----
 #### The user explores browsing the available cars in full detail and can book a car
 
-![user](https://github.com/abdullah-zyoud/Solo_Project/assets/130833624/7b7a51a6-1948-4d98-afbd-978e55126c53)
+![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/c333a29c-118c-42ce-9362-6c8008e4b82c)
+
 
 ### Book Page:
 -----
