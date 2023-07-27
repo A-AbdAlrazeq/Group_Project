@@ -37,31 +37,6 @@
             </ul>
         </div>
     </nav>
-    <!-- {% if user %} {% for car in user %}
-    <div class="grid">
-      <img
-        class="card-img-top"
-        src="../static/img/Logo1.png"
-        alt="Card image cap"
-      />
-      <div class="card-body h-75">
-        <h5>{{car.name}} name</h5>
-        <p class="bottom">{{car.model}} model</p>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <p class="bottom mx-3">{{car.color}} color</p>
-        <br />
-        <p class="bottom">{{car.fuelType}} fuel type</p>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        <p class="bottom">{{car.price}} price</p>
-        <br />
-        <br />
-        <a href="" class="btn btn-outline-light">Add to cart</a>
-        <a href="/remove_favorite/{{car.id}}" class="btn btn-danger">Delete</a>
-      </div>
-    </div>
-    {% endfor %} {% else %}
-    <h1 class="text-center">There are no favorites Places</h1>
-    {% endif %} -->
 
     <h3 class="text-white">My Bookmarked Cars</h3>
     <div class="container">
@@ -78,7 +53,7 @@
                 <span>{{car.price}} $</span>
                 <br>
                 <br>
-                <a style="color: black;" id="updel" href="/addToCart" class="btn btn-outline-dark">Add to cart</a>
+                <a style="color: black;" id="updel" href="/addToCart/{{car.id}}" class="btn btn-outline-dark">Add to cart</a>
                 <a  style="color: black;" id="updel" href="/remove_favorite/{{car.id}}" class="btn btn-outline-dark">Delete</a>
                
             </div>
