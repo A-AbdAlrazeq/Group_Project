@@ -45,7 +45,7 @@ def sort_properties(request):
     sorted_properties_data = []
     for property in sorted_properties:
         # Prepare the property data in a dictionary format
-        if bookmarked:
+        if bookmarked.count():
             for bookmark in bookmarked:
                 if property.id == bookmark.id:
                     property_data = {
@@ -58,6 +58,16 @@ def sort_properties(request):
                         'bookmarked': True,
                     }
                     break
+                else:
+                    property_data = {
+                        'id': property.id,
+                        'name': property.name,
+                        'model': property.model,
+                        'price': format(property.price, "3,d"),
+                        'color': property.color,
+                        'fuelType': property.fuelType,
+                        'bookmarked': False,
+                        }
         else:
             property_data = {
                 'id': property.id,
