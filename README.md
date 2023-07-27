@@ -53,7 +53,7 @@ book
 Tech Stack
 This project was built using Django framework, and uses the following technologies:
 
-Client: HTML, CSS, Javascript, Bootstrap, Jquery
+Client: HTML, CSS, Javascript, Bootstrap, Jquery, Ajax
 Server: Django
 Tools
 Different tools were used to plan and manage the project, such as:
