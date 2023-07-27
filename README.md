@@ -31,12 +31,18 @@ The users of the platform will be able to browse the available cars, get their f
 -----
 ### Home Page
 -----
-![home](https://github.com/abdullah-zyoud/Solo_Project/assets/130833624/2f05ed5d-9953-4697-bb1f-3c363fac2ad3)
+![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/a9e8dd16-c18f-4478-abe3-cfb7c49887ef)
+
+
 
 ### User Registration:
 -----
 #### I used server side validation to make sure data is entered correctly in the corresponding fields.
-![registration](https://github.com/abdullah-zyoud/Solo_Project/assets/130833624/f90a33cb-4750-4b3d-bc5c-7ac6ea29f57f)
+![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/1e3ce213-16ed-4f42-a45d-94b89e292fed)
+![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/8b93623c-e3e3-42e2-b456-e587369a4b9c)
+
+
+
 
 ### Admin page:
 -----
