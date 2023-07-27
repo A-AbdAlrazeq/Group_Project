@@ -42,7 +42,7 @@ h5 {
   
 .grid{ 
     width: 15em; 
-    height: 20em;
+    height: 100%;
     margin-bottom: 1em;
     background-color: rgba(0,0,0,.2);
     color: #fff;
