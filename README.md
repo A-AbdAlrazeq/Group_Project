@@ -1,7 +1,9 @@
 Auto Car
+
 A web application with the main purpose of booking a rental car. The users of the platform will be able to browse the available cars, get their full details, book them for the period and time they want, and pay online, and the admin will be able to add, modify, or delete a car.
 
 Functionalities and Features.
+
 Admin can add a car.
 
 Admin can delete a car.
@@ -21,6 +23,7 @@ The user can cancel the car reservation.
 The user can pay electronically.
 
 Demo
+
 Home Page
 home
 
