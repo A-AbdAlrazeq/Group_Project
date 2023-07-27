@@ -109,7 +109,7 @@ def admin(request):
 def user(request):
     user = User.objects.get(id=request.session['user_id'] ) 
     cars = Car.objects.all()
-    p = Paginator(cars, 3)
+    p = Paginator(cars, 6)
     page = request.GET.get('page')
     cars = p.get_page(page)
     bookmarked = user.bookmarked.all()
