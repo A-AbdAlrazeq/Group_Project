@@ -186,7 +186,7 @@ def show_favorites(request):
     user=User.objects.get(id=user_id)
     if user_id:
         context = {
-            "user":user.bookmakred.all()
+            "user":user.bookmarked.all()
         }
         return render(request, "bookmark.html", context)
 
