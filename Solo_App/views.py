@@ -1,12 +1,86 @@
 from math import log
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from .models import Car ,User,Cart
+from django.http import HttpResponse, JsonResponse
+from django.core.paginator import Paginator
+from .models import *
 from django.contrib import messages
+from django.utils import timezone
 import datetime
 
 def index(request): 
     return render(request, 'home.html')
+
+def add_to_bookmarked(request):
+    text = request.GET.get('text')
+    if request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
+        if text == "Add to Favorites":
+            user = User.objects.get(id=request.session['user_id'])
+            car_id = int(request.GET.get('id'))
+            car = Car.objects.get(id=car_id)
+            user.bookmarked.add(car)
+            return JsonResponse({'text': text}, status=200)
+        if text == "Remove From Favorites":
+            user = User.objects.get(id=request.session['user_id'])
+            car_id = int(request.GET.get('id'))
+            car = Car.objects.get(id=car_id)
+            user.bookmarked.remove(car)
+            return JsonResponse({'text': text}, status=200)
+    return render(request, '/')
+
+
+def sort_properties(request):
+    if int(request.GET.get('sort_id'))== 0:
+        sorted_properties = Car.objects.all()
+    elif int(request.GET.get('sort_id'))== 1:
+        sorted_properties = Car.objects.order_by('-model')
+    elif int(request.GET.get('sort_id'))== 2:
+        sorted_properties = Car.objects.order_by('model')
+    elif int(request.GET.get('sort_id'))== 4:
+        sorted_properties = Car.objects.order_by('price')
+    elif int(request.GET.get('sort_id'))== 5:
+        sorted_properties = Car.objects.order_by('-price')
+    else:
+        sorted_properties = Car.objects.order_by('color')
+    user = User.objects.get(id=request.session['user_id'])
+    bookmarked = user.bookmarked.all()
+    sorted_properties_data = []
+    for property in sorted_properties:
+        # Prepare the property data in a dictionary format
+        if bookmarked.count():
+            for bookmark in bookmarked:
+                if property.id == bookmark.id:
+                    property_data = {
+                        'id': property.id,
+                        'name': property.name,
+                        'model': property.model,
+                        'price': format(property.price, "3,d"),
+                        'color': property.color,
+                        'fuelType': property.fuelType,
+                        'bookmarked': True,
+                    }
+                    break
+                else:
+                    property_data = {
+                        'id': property.id,
+                        'name': property.name,
+                        'model': property.model,
+                        'price': format(property.price, "3,d"),
+                        'color': property.color,
+                        'fuelType': property.fuelType,
+                        'bookmarked': False,
+                        }
+        else:
+            property_data = {
+                'id': property.id,
+                'name': property.name,
+                'model': property.model,
+                'price': format(property.price, "3,d"),
+                'color': property.color,
+                'fuelType': property.fuelType,
+                'bookmarked': False,
+                }
+        sorted_properties_data.append(property_data)
+    return JsonResponse(sorted_properties_data, safe=False)
 
 
 def regLog(request): 
@@ -19,7 +93,12 @@ def register(request):
             messages.error(request, value)
         return redirect('/regLog')
     else:
-        User.objects.create(username=request.POST['username'], email=request.POST['email'], password=request.POST['password'])
+        user = User.objects.create(username=request.POST['username'], email=request.POST['email'], password=request.POST['password'])
+        user.save()
+        #creating a cart when user regisers instead
+        Cart.objects.create(
+                            user = user,
+                        )
         return redirect ('/regLog')
 
 def login(request):
@@ -29,7 +108,6 @@ def login(request):
             messages.error(request, value)
         return redirect('/regLog')
     else:
-       
         this_user = User.objects.get(email=request.POST['email2'])
         request.session['user_id'] = this_user.id
         request.session['username']=this_user.username
@@ -45,14 +123,25 @@ def admin(request):
     }
     return render(request, 'admin.html', context)
  
-def user(request): 
-    user_id = request.session.get('user_id')
-    if user_id:
-        context = {
-            "user": User.objects.get(id=user_id),
-            'cars': Car.objects.all(),
-        }
-    return render(request, 'user.html', context)
+def user(request):
+    user = User.objects.get(id=request.session['user_id'] ) 
+    cars = Car.objects.all()
+    p = Paginator(cars, 6)
+    page = request.GET.get('page')
+    cars = p.get_page(page)
+    bookmarked = user.bookmarked.all()
+   # bookmarkStatus = False
+   # for bookmarked in bookmarked:
+     #   for car in cars:
+        #    if bookmarked == car:
+        #        bookmarkStatus = True
+    context = {
+        'username' : user,
+        'cars': cars,
+        'bookmarked': bookmarked,
+    }
+    return render(request, 'user.html', context) 
+
 def add(request):
     user_id = request.session.get('user_id')
     user =User.objects.get(id=user_id)
@@ -100,8 +189,6 @@ def editCar(request, car_id):
             messages.error(request, value)
         return redirect(f'/edit/{car_id}')
     else:
-   
-
         selected = Car.objects.get(id=car_id)
         selected.name = request.POST['name']
         selected.model = request.POST['model']
@@ -116,18 +203,6 @@ def delete(request, car_id):
     dell.delete() 
     return redirect('/admin')
 
-def add_to_favorites(request, car_id):
-    this_car = Car.objects.get(id=car_id)
-    this_car.bookmarked.add(
-        User.objects.get(id=request.session['user_id']))
-    return redirect('/user')
-
-
-def remove_from_favorites(request, car_id):
-    this_car = Car.objects.get(id=car_id)
-    this_car.bookmarked.remove(
-        User.objects.get(id=request.session['user_id']))
-    return redirect('/user')
 
 
 def show_favorites(request):
@@ -135,7 +210,7 @@ def show_favorites(request):
     user=User.objects.get(id=user_id)
     if user_id:
         context = {
-            "user":user.bookmakred.all()
+            "user":user.bookmarked.all()
         }
         return render(request, "bookmark.html", context)
 
@@ -211,8 +286,54 @@ def remove_car_from_cart(request, car_id):
     return redirect('/cart')
 
 def checkout(request):
-    return render (request, "checkout.html")
+    if 'user_id' in request.session:
+        user=User.objects.get(id=request.session['user_id'])
+        user_cart=Cart.objects.get(user=user)
+        context = {
+                    "cart":user_cart,
+                    "cars":user_cart.cars.count()
+            }
+        return render (request, "checkout.html", context)
+    else:
+        return redirect('/regLog')
+    
+def order(request):
+    if 'user_id' in request.session:
+        user=User.objects.get(id=request.session['user_id'])
+        user_cart=Cart.objects.get(user=user)
+        order = Order.objects.create(user = user, total= user_cart.total)
+        order.created_at = timezone.now()
+        order.save()
+        for car in user_cart.cars.all():
+            order.cars.add(car)
+
+        user_cart.cars.clear()
+        user_cart.total = 0
+        user_cart.save()
+        return redirect('/view_orders')
+    else:
+        return redirect('/regLog')
+    
+def view_orders(request):
+    if 'user_id' in request.session:
+        user=User.objects.get(id=request.session['user_id'])
+        print(Order.objects.filter(user=user))
+        context = {
+                    "orders":Order.objects.filter(user=user)
+                }
+        return render (request, "orders.html", context)
+    else:
+        return redirect('/regLog')
 
 
 def bookmark(request):
-    return render (request, "bookmark.html")
+    if 'user_id' in request.session:
+        user_id = request.session.get('user_id')
+        user=User.objects.get(id=user_id)
+
+        context = {
+                "user":user.bookmarked.all()
+            }
+        return render(request, "bookmark.html", context)
+    else:
+        return redirect('/regLog')

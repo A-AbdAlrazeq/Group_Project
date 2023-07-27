@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index),
+    path('add_to_bookmarked',views.add_to_bookmarked),
     path('regLog', views.regLog),
     path('register', views.register),
     path('login', views.login),
@@ -19,8 +20,13 @@ urlpatterns = [
     path('addToCart2/<int:car_id>', views.add_to_cart),
     path('cart', views.cart),	  
     path('checkout', views.checkout), 
+    path('bookmarked', views.bookmark),
+    path('remove_cart/<int:car_id>', views.remove_car_from_cart),
     path('add_favorite/<int:car_id>', views.add_to_favorites),
     path('remove_favorite/<int:car_id>', views.remove_from_favorites),
      path('remove_cart/<int:car_id>', views.remove_car_from_cart),
     path('bookmark', views.show_favorites),
+    path('sort_cars', views.sort_properties),
+    path('order', views.order),
+    path('view_orders', views.view_orders),
 ]

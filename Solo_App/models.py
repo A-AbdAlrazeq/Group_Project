@@ -78,7 +78,7 @@ class Car(models.Model):
     price = models.IntegerField()
     rent_days = models.IntegerField(default=0)
     available = models.BooleanField(default=True)
-    bookmarked = models.ManyToManyField(User,related_name="bookmakred")
+    bookmarked = models.ManyToManyField(User,related_name="bookmarked")
     user = models.ForeignKey(User, related_name="users", on_delete = models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True) 
@@ -92,7 +92,7 @@ class Cart(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 class Order(models.Model):
-    user = models.OneToOneField(User, on_delete = models.CASCADE, primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     cars = models.ManyToManyField(Car,related_name="order_car")
     total = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
