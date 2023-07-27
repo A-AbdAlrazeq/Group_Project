@@ -39,23 +39,9 @@
         </ul>
       </div>
     </nav>
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-primary ">
-        <h2><img class="icon" src="static\img\cart1.PNG" alt="cart">My Cart</h2>
-        <div class="divnav"></div>
-        <div class="collapse navbar-collapse " id="navbarNav">
-            <ul class="navbar-nav">
-                
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="/bookmark">My bookmarked</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link text-white" href="/logout">Log out</a>
-                </li>
-            </ul>
-        </div>
-    </nav> -->
+    <h3 style=" margin: 1em auto 1em 15%;" class="text-white">My Cart</h3>
 
-    <div class="container">
+    <div  class="container">
       {% if cart.cars.all %} {% for car in cart.cars.all %}
       <div class="grid">
         <img
@@ -73,7 +59,7 @@
           <span>{{car.fuelType}}</span>&nbsp&nbsp&nbsp&nbsp&nbsp
           <span>{{car.price}} $</span>
           <br />
-          <span>rent_days: {{car.rent_days}}</span>
+          <span>rent days: {{car.rent_days}}</span>
           <br />
           <br />
           <a
@@ -89,15 +75,17 @@
       <h1 class="text-center">There are no Cars in Cart</h1>
       {% endif %}
     </div>
-    <p class="text-center">Total Price: ${{cart.total}}</p>
-
+    <p style="font-weight: 800; margin-top: 30px;" class="text-center">Total Price: ${{cart.total}}</p>
+    
+    {% if cart.cars.all %}
     <a
-      style="color: black"
+      style="width: 30%;color: black;"
       id="checkout"
       href="/checkout"
       class="btn btn-outline-dark"
       >Checkout</a
     >
+    {% endif %}
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
