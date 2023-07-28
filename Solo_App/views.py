@@ -233,34 +233,40 @@ def add_to_cart(request,car_id):
     this_car=Car.objects.get(id=car_id)
     from_date=request.POST['date1']
     to_date=request.POST['date2']
-    user=User.objects.get(id=user_id)
-    user_cart=Cart.objects.get(user=user)
-    if from_date and to_date:
-        start_date = datetime.datetime.strptime(from_date, "%Y-%m-%d")
-        end_date = datetime.datetime.strptime(to_date, "%Y-%m-%d")
-        diff = abs((end_date-start_date).days)
-    if user_id:
-        
-        total_price=int(this_car.price*diff)
-    else :
-            total_price=this_car.price
-    if user_cart:
-        user_cart.cars.add(
-        Car.objects.get(id=car_id))
-        user_cart.total+=total_price
-        this_car.rent_days=diff
-        this_car.save()
-        user_cart.save()
-
+    errors = Cart.objects.dateValidator(request.POST)
+    if len(errors) > 0:
+        for key, value in errors.items():
+            messages.error(request, value)
+        return redirect(f'/addToCart/{car_id}')
     else:
-        this_cart= Cart.objects.create(
-                            user = user, 
-                            total = total_price,
-                        )
-        this_cart.cars.add(
+        user=User.objects.get(id=user_id)
+        user_cart=Cart.objects.get(user=user)
+        if from_date and to_date:
+            start_date = datetime.datetime.strptime(from_date, "%Y-%m-%d")
+            end_date = datetime.datetime.strptime(to_date, "%Y-%m-%d")
+            diff = abs((end_date-start_date).days)
+        if user_id:
+            
+            total_price=int(this_car.price*diff)
+        else :
+                total_price=this_car.price
+        if user_cart:
+            user_cart.cars.add(
             Car.objects.get(id=car_id))
-        this_car.rent_days=diff
-        this_car.save()
+            user_cart.total+=total_price
+            this_car.rent_days=diff
+            this_car.save()
+            user_cart.save()
+
+        else:
+            this_cart= Cart.objects.create(
+                                user = user, 
+                                total = total_price,
+                            )
+            this_cart.cars.add(
+                Car.objects.get(id=car_id))
+            this_car.rent_days=diff
+            this_car.save()
 
     return redirect('/cart')
 
@@ -299,18 +305,24 @@ def checkout(request):
     
 def order(request):
     if 'user_id' in request.session:
-        user=User.objects.get(id=request.session['user_id'])
-        user_cart=Cart.objects.get(user=user)
-        order = Order.objects.create(user = user, total= user_cart.total)
-        order.created_at = timezone.now()
-        order.save()
-        for car in user_cart.cars.all():
-            order.cars.add(car)
+        errors = Cart.objects.CheckoutValidator(request.POST)
+        if len(errors) > 0:
+            for key, value in errors.items():
+                messages.error(request, value)
+            return redirect('/checkout')
+        else:
+            user=User.objects.get(id=request.session['user_id'])
+            user_cart=Cart.objects.get(user=user)
+            order = Order.objects.create(user = user, total= user_cart.total)
+            order.created_at = timezone.now()
+            order.save()
+            for car in user_cart.cars.all():
+                order.cars.add(car)
 
-        user_cart.cars.clear()
-        user_cart.total = 0
-        user_cart.save()
-        return redirect('/view_orders')
+            user_cart.cars.clear()
+            user_cart.total = 0
+            user_cart.save()
+            return redirect('/view_orders')
     else:
         return redirect('/regLog')
     
