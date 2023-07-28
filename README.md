@@ -44,7 +44,8 @@ The users of the platform will be able to browse the available cars, get their f
 ![l](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/4fbfe021-8b32-4300-b7e7-916a684826e3)
 
 ![reg](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/7bf9563f-d0c5-43bd-8839-d136db5dfbf1)
-![regVal](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/157931f6-d6f2-4537-969b-42890bbc877f)
+
+![r](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/3dad33e5-22e1-48d5-8c2b-e10479c2b586)
 
 
 
@@ -63,6 +64,7 @@ The users of the platform will be able to browse the available cars, get their f
 -----
 #### Admin can add a car
 ![add](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/4d0de956-b580-4c60-b121-57f56e1c9490)
+
 ![addVal](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/63b5bd96-7a11-4b1c-b046-875ef346bbc9)
 
 
