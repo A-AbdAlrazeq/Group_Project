@@ -31,7 +31,8 @@ The users of the platform will be able to browse the available cars, get their f
 -----
 ### Home Page
 -----
-![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/a9e8dd16-c18f-4478-abe3-cfb7c49887ef)
+![home](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/cc21cf21-1dc8-4327-9a1e-3f415554a6ef)
+
 
 
 
