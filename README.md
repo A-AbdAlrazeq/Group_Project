@@ -112,7 +112,7 @@ This project was built using Django framework, and uses the following technologi
 Different tools were used to plan and manage the project, such as:
 - Balsamiq: For creating the wireframe
 - Workbench: for creating the ERD
-## TEAM MEMBERS
+## Team Members
 - Abdullah Zyoud
 - Abd Alrahman Abd Alrazeq
 - Asad Abugosh
