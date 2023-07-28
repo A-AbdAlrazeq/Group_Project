@@ -40,7 +40,11 @@ The users of the platform will be able to browse the available cars, get their f
 -----
 #### I used server side validation to make sure data is entered correctly in the corresponding fields.
 ![log](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/78ae41c4-a162-4e60-b1c2-530c281abdf5)
+![logVal](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/ab1699ca-0e47-40ad-86c3-54667fda74ff)
+
 ![reg](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/7bf9563f-d0c5-43bd-8839-d136db5dfbf1)
+![regVal](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/157931f6-d6f2-4537-969b-42890bbc877f)
+
 
 
 
@@ -58,6 +62,8 @@ The users of the platform will be able to browse the available cars, get their f
 -----
 #### Admin can add a car
 ![add](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/4d0de956-b580-4c60-b121-57f56e1c9490)
+![addVal](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/63b5bd96-7a11-4b1c-b046-875ef346bbc9)
+
 
 
 
@@ -65,6 +71,8 @@ The users of the platform will be able to browse the available cars, get their f
 -----
 #### Admin can Update and Delete the car
 ![edit](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/fa5e0559-0028-4040-9e56-9946a2ce606d)
+![editVal](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/b0ab018d-1158-433e-a055-1d6b3f1edaca)
+
 
 
 
