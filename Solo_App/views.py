@@ -1,4 +1,3 @@
-from math import log
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.core.paginator import Paginator
@@ -10,15 +9,13 @@ import datetime
 def index(request): 
     if 'user_id' in request.session:
         user = User.objects.get(id=request.session['user_id'])
-        print(user.email)
-        if user.email == 'Abugosh94@gmail.com':
+        if user.isAdmin == True:
             status = True
         else:
             status = False
         context={
             'isAdmin': status,
         }
-        print(status)
         return render(request, 'home.html', context)
     return render(request, 'home.html')
 
@@ -155,44 +152,31 @@ def user(request):
     return render(request, 'user.html', context) 
 
 def add(request):
-    user_id = request.session.get('user_id')
-    user =User.objects.get(id=user_id)
-    if user.isAdmin == True:
-        return render(request, 'add.html')
-    else :
-        return render(request, 'home.html')
-
-        
+    return render(request, 'add.html')
 
 def addCar(request):
+    errors = Car.objects.addValidator(request.POST)
+    if len(errors) > 0:
+        for key, value in errors.items():
+            messages.error(request, value)
+        return redirect('/add')
+    else:
     
-        errors = Car.objects.addValidator(request.POST)
-        if len(errors) > 0:
-            for key, value in errors.items():
-                messages.error(request, value)
-            return redirect('/add')
-        else:
-        
-            Car.objects.create(
-                            name = request.POST['name'], 
-                            model = request.POST['model'], 
-                            color = request.POST['color'],
-                            fuelType = request.POST['fuelType'],
-                            price = request.POST['price'],
-                            user = User.objects.get(id=request.session['user_id']), 
-                        )
-            return redirect('/admin')
+        Car.objects.create(
+                        name = request.POST['name'], 
+                        model = request.POST['model'], 
+                        color = request.POST['color'],
+                        fuelType = request.POST['fuelType'],
+                        price = request.POST['price'],
+                        user = User.objects.get(id=request.session['user_id']), 
+                    )
+        return redirect('/admin')
 
 def edit(request, car_id):
-    user_id = request.session.get('user_id')
-    user =User.objects.get(id=user_id)
-    if user.isAdmin == True:
-        context = {
-            'cars' : Car.objects.get(id=car_id) 
-        }
-        return render(request,'edit.html',context)
-    else :
-        return render(request, 'home.html')
+    context = {
+        'cars' : Car.objects.get(id=car_id) 
+    }
+    return render(request,'edit.html',context)
 
 def editCar(request, car_id):
     errors = Car.objects.editValidator(request.POST)
