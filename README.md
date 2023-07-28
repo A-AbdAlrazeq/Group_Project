@@ -112,6 +112,11 @@ This project was built using Django framework, and uses the following technologi
 Different tools were used to plan and manage the project, such as:
 - Balsamiq: For creating the wireframe
 - Workbench: for creating the ERD
+## TEAM MEMBERS
+- Abdullah Zyoud
+- Abd Alrahman Abd Alrazeq
+- Asad Abugosh
+- Rawan Akram 
 ## Logo
 -----
 ![Logo1](https://github.com/abdullah-zyoud/Solo_Project/assets/130833624/eeb64f4b-20f5-42b0-85f4-aaabce8fd7b0)
