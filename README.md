@@ -39,7 +39,7 @@ The users of the platform will be able to browse the available cars, get their f
 ### User Registration:
 -----
 #### I used server side validation to make sure data is entered correctly in the corresponding fields.
-![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/1e3ce213-16ed-4f42-a45d-94b89e292fed)
+![log](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/78ae41c4-a162-4e60-b1c2-530c281abdf5)
 ![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/8b93623c-e3e3-42e2-b456-e587369a4b9c)
 
 
