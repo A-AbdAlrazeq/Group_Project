@@ -7,6 +7,18 @@ from django.utils import timezone
 import datetime
 
 def index(request): 
+    if 'user_id' in request.session:
+        user = User.objects.get(id=request.session['user_id'])
+        print(user.email)
+        if user.email == 'Abugosh94@gmail.com':
+            status = True
+        else:
+            status = False
+        context={
+            'isAdmin': status,
+        }
+        print(status)
+        return render(request, 'home.html', context)
     return render(request, 'home.html')
 
 def add_to_bookmarked(request):
