@@ -26,23 +26,26 @@
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-      <img src="../static/img/Logo1.png" alt="Logo_Image" />
+    <nav id="navb" class="navbar navbar-expand-lg navbar-light bg-primary">
+      <img src="../static/img/Logo1.png" alt="" />
       <div class="divnav"></div>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link text-white" href="/user">Back</a>
+            <a class="nav-link text-white" href="/user">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="/cart">My Cart</a>
           </li>
-
           <li class="nav-item">
             <a class="nav-link text-white" href="/bookmark">My bookmarked</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="/logout">Log out</a>
+            <a class="nav-link text-white" href="/view_orders">My Orders</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/logout">Log Out</a>
           </li>
         </ul>
       </div>
@@ -72,7 +75,8 @@
                     class="form-control"
                     id="date1"
                     name="date1"
-                  required/>
+                    required
+                  />
                 </div>
                 <div>
                   <label for="date2" class="col-form-label fw-bold text-muted"
@@ -83,8 +87,38 @@
                     class="form-control"
                     id="date2"
                     name="date2"
-                  required/>
+                    required
+                  />
                 </div>
+              </div>
+              <div
+                style="
+                  color: red;
+                  width: 30%;
+                  margin: auto;
+                  margin-top: 1em;
+                  text-align: center;
+                "
+                class="error"
+              >
+                {% if messages %}
+                <ul style="list-style: none" class="ulError">
+                  {% for message in messages %}
+                  <li
+                    {%
+                    if
+                    message.tags
+                    %}
+                    class="{{ message.tags }}"
+                    {%
+                    endif
+                    %}
+                  >
+                    * {{ message }}
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
               </div>
 
               <div class="row mb-5 row justify-content-center">
