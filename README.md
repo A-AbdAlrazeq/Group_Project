@@ -40,7 +40,7 @@ The users of the platform will be able to browse the available cars, get their f
 -----
 #### I used server side validation to make sure data is entered correctly in the corresponding fields.
 ![log](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/78ae41c4-a162-4e60-b1c2-530c281abdf5)
-![logVal](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/ab1699ca-0e47-40ad-86c3-54667fda74ff)
+
 ![logv](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/f9bfb978-3d41-4cc5-942b-37eaf0ebf377)
 
 ![reg](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/7bf9563f-d0c5-43bd-8839-d136db5dfbf1)
