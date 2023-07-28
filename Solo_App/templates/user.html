@@ -8,7 +8,7 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
       <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="{% static 'css/user.css' %}">
-      <title>Admin</title>
+      <title>User View</title>
       <style>
       body {
       background-image: url('../static/img/s.jpg');
@@ -25,13 +25,16 @@
         <div class="collapse navbar-collapse " id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link text-white" href="/">Home</a>
+              <a class="nav-link text-white" href="/user">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="/">About</a>
+              <a class="nav-link text-white" href="/cart">My Cart</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="/">Contact Us</a>
+              <a class="nav-link text-white" href="/bookmark">My bookmarked</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/view_orders">My Orders</a>
             </li>
   
             <li class="nav-item">
