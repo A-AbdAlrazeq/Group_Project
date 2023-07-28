@@ -48,21 +48,23 @@ The users of the platform will be able to browse the available cars, get their f
 ### Admin page:
 -----
 #### The admin explores the browsing available cars in full detail and can add, edit and delete a car
-![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/04b74048-65d4-4ef2-a7dd-7fbd9b705f53)
+![admin](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/3c27fba4-530d-4800-be18-8a0bf1581171)
+
+
 
 
 
 ### Add Car:
 -----
 #### Admin can add a car
-![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/b238b254-c754-44a3-a05e-d3e70aa8f5a5)
+![add](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/4d0de956-b580-4c60-b121-57f56e1c9490)
 
 
 
 ### Edit Car:
 -----
 #### Admin can Update and Delete the car
-![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/2b77ea6d-d428-4359-b1aa-e57dd82230ce)
+![edit](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/fa5e0559-0028-4040-9e56-9946a2ce606d)
 
 
 
