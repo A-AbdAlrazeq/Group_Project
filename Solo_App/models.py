@@ -1,5 +1,7 @@
 from django.db import models
 import re
+from django.utils import timezone
+from datetime import datetime
 
 
 
@@ -59,6 +61,42 @@ class UserManager(models.Manager):
         elif not postData['price'].isdigit():
             errors['price'] = "Price must be a number"
         return errors 
+    def dateValidator(self, postData):
+        errors = {}
+        from_date = postData.get('date1')
+        to_date = postData.get('date2')
+        if from_date or to_date:
+            from_date_format = datetime.strptime(
+                from_date, '%Y-%m-%d').date()
+            to_date_format = datetime.strptime(
+                to_date, '%Y-%m-%d').date()
+            current_date = timezone.now().date()
+            if from_date_format < current_date or to_date_format < current_date:
+                errors["date"] = "from/to date must be in the Future"
+            if from_date_format > to_date_format:
+                errors["date1"] = "The to_date must be greater than the from_date"
+        return errors
+
+    def CheckoutValidator(self, postData):
+        errors = {}
+        card_num = postData.get('card-num')
+        exp = postData.get('exp')
+        cvv = postData.get('cvv')
+        print(cvv,"hello")
+        print(card_num)
+        if len(cvv) !=3:
+            errors['cvv'] = "cvv must be 3 number"
+        if len(card_num) !=16:
+            errors['card-num'] = "Card Number must be 16 number"
+        if exp :
+            try:
+                input_date = datetime.strptime(exp, "%m/%y")
+                current_date = datetime.now()
+                if input_date < current_date:
+                     errors['exp'] =("Card is expired,try another one")
+            except ValueError:
+                 errors['exp1'] =("Invalid date format. Please use 'mm/yy' format.")
+        return errors 
 
 
 class User(models.Model):
@@ -90,6 +128,7 @@ class Cart(models.Model):
     total = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    objects = UserManager() 
 
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
