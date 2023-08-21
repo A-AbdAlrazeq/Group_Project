@@ -8,21 +8,19 @@ Imagine a website that's all about reserving cars – that's what our web applic
 
 - Admin Car Management: Administrators have the power to easily add new cars to the system, remove cars that are no longer available, and make changes to existing car details.
 
-- User Account Management: Our application allows users to create their personal accounts, complete with validation for accurate information. Once registered, users can effortlessly log into their accounts, ensuring smooth and efficient access to personalized features and streamlined booking processes.
+- User Account Management: Our application allows users to create their personal accounts, complete with validation for input information. Once registered, users can log into their accounts, ensuring smooth and efficient access to personalized features and streamlined booking processes.
 
-- Car Information: Users can explore comprehensive details about each available car, helping them make informed decisions.
+- Car Information: Users can explore details about each available car, helping them make informed decisions.
 
-- Easy Booking: Booking a car is a breeze. Users choose their preferred dates, then add them to the cart.
+- Easy Booking: Users choose their preferred dates, then add them to the cart.
 
-- Flexible Cancellation: Change of plans? No worries. Users can cancel car reservations with ease.
+- Flexible Cancellation: Users can cancel car reservations with ease.
 
 - Smart Search: Find the perfect car by filtering fuel type, model, color, and price.
   
 - Bookmark and Book: Users can save their favorite cars to a bookmark, making it easy to access and add them to the cart for a streamlined booking process.
-  
-- Users can bookmark cars to review and add to cart later
-  
-- Smooth Checkout: Ready to go? Users can proceed to checkout with a clear total price.
+    
+- Smooth Checkout: Users can proceed to checkout with a clear total price.
   
 - Responsive on Any Device: Our app seamlessly adapts to computers, tablets, and phones
 ## Demo
