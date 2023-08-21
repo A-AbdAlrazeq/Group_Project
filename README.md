@@ -100,7 +100,8 @@ Imagine a website that's all about reserving cars – that's what our web applic
 
 ### Checkout:
 -----
-![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/3685d09b-a283-4423-adf6-5d38b1650e86)
+### On the checkout page, users can input their card number, expiration date, and CVV. All inputs are validated for accuracy and security.
+![Screenshot (78)](https://github.com/A-AbdAlrazeq/Group_Project/assets/107461563/4cdd1637-775b-40c7-9705-8766c232a43c)
 
 ### My Orders:
 -----
