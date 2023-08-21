@@ -57,7 +57,7 @@ Imagine a website that's all about reserving cars – that's what our web applic
 
 ### Add Car:
 -----
-#### Admin can add a car
+#### Admin can add a car with validation 
 ![add](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/4d0de956-b580-4c60-b121-57f56e1c9490)
 
 ![addVal](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/63b5bd96-7a11-4b1c-b046-875ef346bbc9)
@@ -67,7 +67,7 @@ Imagine a website that's all about reserving cars – that's what our web applic
 
 ### Edit Car:
 -----
-#### Admin can Update and Delete the car
+#### Admin can Update with validation and also can Delete a car
 ![edit](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/fa5e0559-0028-4040-9e56-9946a2ce606d)
 ![editVal](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/b0ab018d-1158-433e-a055-1d6b3f1edaca)
 
