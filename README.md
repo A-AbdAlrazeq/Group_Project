@@ -87,8 +87,9 @@ Imagine a website that's all about reserving cars – that's what our web applic
 ![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/dff22b45-7180-43d7-8ab2-4b1ec8ff1105)
 
 
-### Book Page:
+### cart Page:
 -----
+### On the cart page, users can select rental dates ("from" and "to") with Date validation, and the total price is calculated by (car price * rent days(ToDate-FromDate).
 ![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/bcb43a48-32bf-4334-806b-b99ac3ee364d)
 
 ### Cart:
