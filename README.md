@@ -96,8 +96,7 @@ Imagine a website that's all about reserving cars – that's what our web applic
 ### Cart:
 -----
 ### On my cart page, users can see the cars they've added, along with the combined total price for all selected cars.
-![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/2d740289-71b3-402f-8f1b-dcbe60721014)
-![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/fbb7a5a7-970e-496c-a61a-39f451070980)
+![Screenshot (77)](https://github.com/A-AbdAlrazeq/Group_Project/assets/107461563/05e37c38-7dd7-40c6-9e29-9a9fe7dfcc59)
 
 ### Checkout:
 -----
