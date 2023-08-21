@@ -105,7 +105,8 @@ Imagine a website that's all about reserving cars – that's what our web applic
 
 ### My Orders:
 -----
-![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/bd9fc76d-0a75-4d73-95fb-239ff64882df)
+### The order page displays a comprehensive list of all user-made orders, showcasing detailed information for each order.
+![Screenshot (79)](https://github.com/A-AbdAlrazeq/Group_Project/assets/107461563/a204e239-4c48-48dd-b6ef-951c84841a35)
 
 
 
@@ -121,8 +122,8 @@ Different tools were used to plan and manage the project, such as:
 - Balsamiq: For creating the wireframe
 - Workbench: for creating the ERD
 ## Team Members
-- Abdullah Zyoud
 - Abd Alrahman Abd Alrazeq
+- Abdullah Zyoud
 - Asad Abugosh
 - Rawan Akram 
 ## Logo
