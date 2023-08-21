@@ -1,8 +1,7 @@
 # Auto Car
 -----
 
-A web application with the main purpose of booking a rental car.
-The users of the platform will be able to browse the available cars, get their full details, book them for the period and time they want, and pay online, and the admin will be able to add, modify, or delete a car.
+Imagine a website that's all about reserving cars – that's what our web application is for! People who use the site can look through different cars that are available, learn all about them, pick the dates and times they want to use them, pay online, and the Admin can also add new cars, change info about them, or take cars off the list if needed. It's a straightforward way to find and book the right car for you, it's an easy way to handle the car lineup. Whether you're going on a trip, need a car for work, or just a temporary ride, our website makes car booking simple and convenient.
 
 ## Functionalities and Features.
 -----
