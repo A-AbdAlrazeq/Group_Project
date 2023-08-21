@@ -76,7 +76,7 @@ Imagine a website that's all about reserving cars – that's what our web applic
 
 ### User Page:
 -----
-#### The user explores browsing the available cars in full detail and can book a car
+#### Users can fully explore and book cars, add them to bookmarks, sort by price, fuel type, or model, and navigate through pages conveniently.
 
 ![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/4a186b22-7d55-4c33-a347-72be308e4fa7)
 ![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/bdab8ddb-f2ff-4147-b0fe-a101cc203fa3)
