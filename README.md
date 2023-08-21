@@ -16,10 +16,15 @@ Imagine a website that's all about reserving cars – that's what our web applic
 
 - Flexible Cancellation: Change of plans? No worries. Users can cancel car reservations with ease.
 
-- The user can pay electronically.
-- The User can filter car depend on (Fual Type,Model,Color,Price)
+- Smart Search: Find the perfect car by filtering fuel type, model, color, and price.
+  
+- Bookmark and Book: Users can save their favorite cars to a bookmark, making it easy to access and add them to the cart for a streamlined booking process.
+  
 - Users can bookmark cars to review and add to cart later
-- Responsive layout
+  
+- Smooth Checkout: Ready to go? Users can proceed to checkout with a clear total price.
+  
+- Responsive on Any Device: Our app seamlessly adapts to computers, tablets, and phones
 ## Demo
 -----
 ### Home Page
