@@ -32,9 +32,8 @@ Imagine a website that's all about reserving cars – that's what our web applic
 
 
 
-### User Registration:
+### User Login and Registration with validation for all input:
 -----
-#### I used server side validation to make sure data is entered correctly in the corresponding fields.
 ![log](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/78ae41c4-a162-4e60-b1c2-530c281abdf5)
 
 ![l](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/4fbfe021-8b32-4300-b7e7-916a684826e3)
