@@ -48,7 +48,7 @@ Imagine a website that's all about reserving cars – that's what our web applic
 
 ### Admin page:
 -----
-#### The admin explores the browsing available cars in full detail and can add, edit and delete a car
+#### The admin can view, add, edit, and delete cars with full control.
 ![admin](https://github.com/A-AbdAlrazeq/Group_Project/assets/130833624/3c27fba4-530d-4800-be18-8a0bf1581171)
 
 
