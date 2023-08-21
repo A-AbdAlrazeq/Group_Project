@@ -6,21 +6,15 @@ Imagine a website that's all about reserving cars – that's what our web applic
 ## Functionalities and Features.
 -----
 
-- Admin can add a car.
+- Admin Car Management: Administrators have the power to easily add new cars to the system, remove cars that are no longer available, and make changes to existing car details.
 
-- Admin can delete a car.
+- User Account Management: Our application allows users to create their personal accounts, complete with validation for accurate information. Once registered, users can effortlessly log into their accounts, ensuring smooth and efficient access to personalized features and streamlined booking processes.
 
-- Admin can modify a car.
+- Car Information: Users can explore comprehensive details about each available car, helping them make informed decisions.
 
-- The user can create an account.
+- Easy Booking: Booking a car is a breeze. Users choose their preferred dates, then add them to the cart.
 
-- The user can log in to his account.
-
-- The user explores browsing the available cars in full detail.
-
-- The user can book a car.
-
-- The user can cancel the car reservation.
+- Flexible Cancellation: Change of plans? No worries. Users can cancel car reservations with ease.
 
 - The user can pay electronically.
 - The User can filter car depend on (Fual Type,Model,Color,Price)
