@@ -83,6 +83,7 @@ Imagine a website that's all about reserving cars – that's what our web applic
 ![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/529f3a12-ccc7-4b62-8e1a-39be0170ee89)
 ### Bookmarked Cars:
 -----
+### The bookmarked page displays cars saved by the user
 ![image](https://github.com/A-AbdAlrazeq/Group_Project/assets/33298724/dff22b45-7180-43d7-8ab2-4b1ec8ff1105)
 
 
